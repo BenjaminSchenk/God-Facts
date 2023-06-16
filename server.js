@@ -23,7 +23,7 @@ app.get('/gods', async (req, res) => {
 })
 
 app.get('/gods/:name', async (req, res) => {
-    const { name } = req.params
+    const { name } = req.params;
     try {
         const result = await pool.query('SELECT * FROM gods WHERE name = $1', [name])
         if (result.rowCount === 0) {
