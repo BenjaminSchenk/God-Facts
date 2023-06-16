@@ -10,7 +10,7 @@ const pool = new Pool ({
 });
 
 app.use(express.static("public"))
-app.use(express .json())
+app.use(express.json())
 
 app.get('/gods', async (req, res) => {
     try {
