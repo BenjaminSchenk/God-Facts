@@ -22,6 +22,21 @@ app.get('/gods', async (req, res) => {
     }
 })
 
+app.get('/gods/:id', async (req, res) => {
+    const { id } = req.params
+    try {
+        const result = await pool.query('SELECT * FROM gods WHERE name = $1', [id])
+        if (result.rowCount === 0) {
+            res.status(404).send('Not found make sure you spelled it correctly.')
+        } else {
+            res.status(200).send(result.rows)
+        }
+    } catch (err) {
+        console.error(err)
+        res.status(500).send('Internal server error.')
+    }
+})
+
 app.listen(PORT, () => {
     console.log('Listening on port', PORT)
 })
