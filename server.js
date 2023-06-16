@@ -22,10 +22,10 @@ app.get('/gods', async (req, res) => {
     }
 })
 
-app.get('/gods/:id', async (req, res) => {
-    const { id } = req.params
+app.get('/gods/:name', async (req, res) => {
+    const { name } = req.params
     try {
-        const result = await pool.query('SELECT * FROM gods WHERE name = $1', [id])
+        const result = await pool.query('SELECT * FROM gods WHERE name = $1', [name])
         if (result.rowCount === 0) {
             res.status(404).send('Not found make sure you spelled it correctly.')
         } else {
