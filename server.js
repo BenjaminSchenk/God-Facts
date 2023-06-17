@@ -29,7 +29,7 @@ app.get('/gods/:name', async (req, res) => {
         const result = await pool.query('SELECT * FROM gods WHERE name = $1', [name])
         console.log(result)
         if (result.rowCount === 0) {
-            res.status(404).send('Not found make sure you spelled it correctly.')
+            res.send('Not found make sure you spelled it correctly.')
         } else {
             res.status(200).send(result.rows)
         }
