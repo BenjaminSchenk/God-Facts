@@ -26,7 +26,7 @@ app.get('/gods/:name', async (req, res) => {
     const { name } = req.params;
     console.log(name)
     try {
-        const result = await pool.query('SELECT * FROM gods WHERE name = $1', [name])
+        const result = await pool.query('SELECT * FROM gods WHERE TRIM(name) = $1', [name])
         console.log(result)
         if (result.rowCount === 0) {
             res.send('Not found make sure you spelled it correctly.')
