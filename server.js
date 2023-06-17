@@ -16,6 +16,7 @@ app.get('/gods', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM gods')
         res.status(200).send(result.rows)
+        console.log('working')
     } catch (err) {
         console.error(err)
         res.status.send('Internal server error.')
@@ -26,10 +27,10 @@ app.get('/gods/:name', async (req, res) => {
     const { name } = req.params;
     console.log(name)
     try {
-        const result = await pool.query('SELECT * FROM gods WHERE TRIM(name) = $1', [name])
+        const result = await pool.query('SELECT * FROM gods WHERE name = $1', [name])
         console.log(result)
         if (result.rowCount === 0) {
-            res.send('Not found make sure you spelled it correctly.')
+            res.status(404).send('Not found make sure you spelled it correctly.')
         } else {
             res.status(200).send(result.rows)
         }
