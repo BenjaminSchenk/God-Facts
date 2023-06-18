@@ -16,7 +16,6 @@ app.get('/gods', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM gods')
         res.status(200).send(result.rows)
-        console.log('working')
     } catch (err) {
         console.error(err)
         res.status.send('Internal server error.')
@@ -37,6 +36,17 @@ app.get('/gods/:name', async (req, res) => {
     } catch (err) {
         console.error(err)
         res.status(500).send('Internal server error.')
+    }
+})
+
+app.get('/pantheon/:name', async (req, res) => {
+    const { name } = req.params
+    try {
+        const result = await pool.query('SELECT gods.name, gods.god_goddess_of, gods.info, gods.fun_facts, gods.pantheon_name, pantheon.description FROM gods INNER JOIN pantheon ON gods.pantheon_name = pantheon.name WHERE pantheon.name = $1', [name])
+        res.status(200).send(result.rows)
+    } catch (err) {
+        console.error(err)
+        res.status(500).send('Internal Server Error.')
     }
 })
 
