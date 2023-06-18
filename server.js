@@ -42,7 +42,7 @@ app.get('/gods/:name', async (req, res) => {
 app.get('/pantheon/:name', async (req, res) => {
     const { name } = req.params
     try {
-        const result = await pool.query('SELECT gods.name, gods.god_goddess_of, gods.info, gods.fun_facts, gods.pantheon_name, pantheon.description FROM gods INNER JOIN pantheon ON gods.pantheon_name = pantheon.name WHERE pantheon.name = $1', [name])
+        const result = await pool.query('SELECT gods.name, gods.god_goddess_of, gods.info, gods.fun_facts, gods.pantheon_name, pantheon.description FROM gods INNER JOIN pantheon ON gods.pantheon_name = pantheon.name WHERE TRIM(pantheon.name) = $1', [name])
         res.status(200).send(result.rows)
     } catch (err) {
         console.error(err)
