@@ -1,4 +1,4 @@
-const body = querySelector("")
+const body = querySelector('body')
 const allBtn = document.querySelector("#Gods")
 
 allBtn.addEventListener('click', async () => {
