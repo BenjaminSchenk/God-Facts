@@ -50,7 +50,7 @@ app.get('/pantheon/:name', async (req, res) => {
     }
 })
 
-app.post('/god', async (req, res) => {
+app.post('/gods', async (req, res) => {
     const { name, god_goddess_of, info, fun_facts, pantheon_name } = req.body
     try {
         const result = await pool.query('INSERT INTO gods (name, god_goddess_of, info, fun_facts, pantheon_name) VALUES ($1, $2, $3, $4, $5)', [name, god_goddess_of, info, fun_facts, pantheon_name])
@@ -61,9 +61,27 @@ app.post('/god', async (req, res) => {
     }
 })
 
+app.put('/gods/:name', async (req, res) => {
+    const { name } = req.params
+    const { god_goddess_of, info, fun_facts, pantheon_name } = req.body
+    try {
+        if (god_goddess_of, info, fun_facts, pantheon_name) {
+            const result = await pool.query('UPDATE gods SET god_goddess_of = $1, info = $2, fun_facts = $3, pantheon_name = $4 WHERE name = $5', [god_goddess_of, info, fun_facts, pantheon_name, name])
+            if (result.rowCount === 0) {
+                res.status(404).send('No God found matching that name.')
+            } else {
+                res.status(201).send('Info on God sucessfully updated.')
+            }
+        } else {
+            res.status(400).send('Missing some info please fill out everything.')
+        }
+    } catch (err) {
+        console.error(err)
+        res.status(500).send('Internal server error.')
+    }
+}) 
 
-
-app.delete('/god/:name', async (req, res) => {
+app.delete('/gods/:name', async (req, res) => {
     const { name } = req.params
     try {
         const result = await pool.query('DELETE FROM gods WHERE name = $1', [name])
