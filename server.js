@@ -66,7 +66,7 @@ app.post('/god', async (req, res) => {
 app.delete('/god/:name', async (req, res) => {
     const { name } = req.params
     try {
-        const result = pool.query('DELETE FROM gods WHERE name = $1', [name])
+        const result = await pool.query('DELETE FROM gods WHERE name = $1', [name])
         res.status(201).send('God has been deleted')
     } catch (err) {
         console.error(err)
