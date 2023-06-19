@@ -1,10 +1,32 @@
 const body = document.querySelector('body')
+const home = document.querySelector('#Home')
 const allBtn = document.querySelector("#Gods")
+const greek = document.querySelector('#Greek')
+const egyptian = document.querySelector('#Egyptian')
+const norse = document.querySelector('#Norse')
+const aztec = document.querySelector('#Aztec')
+const hawaiian = document.querySelector('#Hawaiian')
+const hindu = document.querySelector('#Hindu')
+
+home.addEventListener('click', () => {
+    const page = document.querySelector('#page')
+    page.remove()
+    const allGods = document.createElement('div')
+    allGods.setAttribute('id','page')
+    body.append(page)
+})
 
 allBtn.addEventListener('click', async () => {
     const response = await fetch('https://ancient-gods.onrender.com/gods')
     const data = await response.json()
     allgods(data)
+})
+
+greek.addEventListener('click', async () => {
+    const response = await fetch('https://ancient-gods.onrender.com/pantheon/Greek Pantheon')
+    const data = await response.json()
+    console.log(data)
+    //pantheon(data)
 })
 
 function allgods (data) {
