@@ -58,6 +58,13 @@ hindu.addEventListener('click', async () => {
     pantheon(data)
 })
 
+dele.addEventListener('click', async () => {
+    const response = fetch(`https://ancient-gods.onrender.com/gods/${name}`, {
+        method: 'DELETE'
+      })
+
+})
+
 function allgods (data) {
     const page = document.querySelector('#page')
     page.remove()
@@ -74,6 +81,8 @@ function allgods (data) {
         const info = document.createElement('p')
         const fun = document.createElement('p')
         const panth = document.createElement('p')
+        const dele = document.createElement('button')
+        dele.textContent = 'Delete'
         name.setAttribute('id','name')
         of.setAttribute('id','of')
         info.setAttribute('id','info')
@@ -89,6 +98,7 @@ function allgods (data) {
         all.append(info)
         all.append(fun)
         all.append(panth)
+        all.append(dele)
     }
 }
 
