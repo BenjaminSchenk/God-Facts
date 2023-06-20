@@ -34,7 +34,7 @@ function allgods (data) {
     page.remove()
     const allGods = document.createElement('div')
     allGods.setAttribute('id','page')
-    body.append(page)
+    body.append(allGods)
     for (let i = 0; i < data.length; i++) {
         const obj = data[i]
         const name = document.createElement('p')
