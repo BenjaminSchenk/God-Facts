@@ -7,6 +7,7 @@ const norse = document.querySelector('#Norse')
 const aztec = document.querySelector('#Aztec')
 const hawaiian = document.querySelector('#Hawaiian')
 const hindu = document.querySelector('#Hindu')
+const searchBtn = document.querySelector('#searchBtn')
 
 home.addEventListener('click', () => {
     const page = document.querySelector('#page')
@@ -65,16 +66,23 @@ dele.addEventListener('click', async () => {
 
 })
 
+searchBtn.addEventListener('click', async () => {
+    const input = document.querySelector('#searchInput')
+    const value = input.value.trim()
+    const response = await fetch(`https://ancient-gods.onrender.com/gods/${value}`)
+    const data = await response.json()
+    searchGods(data)
+});
+
 function allgods (data) {
     const page = document.querySelector('#page')
     page.remove()
     const allGods = document.createElement('div')
     allGods.setAttribute('id','page')
-    const all = document.createElement('div')
-    all.setAttribute('id', 'all')
     body.append(allGods)
-    allGods.append(all)
     for (let i = 0; i < data.length; i++) {
+        const all = document.createElement('div')
+        all.setAttribute('id', 'all')
         const obj = data[i]
         const name = document.createElement('p')
         const of = document.createElement('p')
@@ -95,14 +103,14 @@ function allgods (data) {
         panth.innerHTML = obj.pantheon_name
         dele.addEventListener('click', async () => {
             await deleteGod(obj.name);
-            allgods(data)
-          });
+        });
         all.append(name)
         all.append(of)
         all.append(info)
         all.append(fun)
         all.append(panth)
         all.append(dele)
+        gods.append(all)
     }
 }
 
@@ -111,22 +119,23 @@ function pantheon (data) {
     page.remove()
     const gods = document.createElement('div')
     gods.setAttribute('id','page')
-    const all = document.createElement('div')
-    all.setAttribute('id', 'all')
     body.append(gods)
-    gods.append(all)
     let obj2 = data[0]
     const descript = document.createElement('p')
     descript.setAttribute('id', 'description')
     descript.innerHTML = obj2.description
-    all.append(descript)
+    gods.append(descript)
     for (let i = 0; i < data.length; i++) {
+        const all = document.createElement('div')
+        all.setAttribute('id', 'all')
         const obj = data[i]
         const name = document.createElement('p')
         const of = document.createElement('p')
         const info = document.createElement('p')
         const fun = document.createElement('p')
         const panth = document.createElement('p')
+        const dele = document.createElement('button')
+        dele.textContent = 'Delete'
         name.setAttribute('id','name')
         of.setAttribute('id','of')
         info.setAttribute('id','info')
@@ -137,12 +146,59 @@ function pantheon (data) {
         info.innerHTML = obj.info
         fun.innerHTML = obj.fun_facts
         panth.innerHTML = obj.pantheon_name
+        dele.addEventListener('click', async () => {
+            await deleteGod(obj.name);
+        });
         all.append(name)
         all.append(of)
         all.append(info)
         all.append(fun)
         all.append(panth)
+        all.append(dele)
+        gods.append(all)
     } 
+}
+
+function searchGods (data) {
+    const page = document.querySelector('#page')
+    page.remove()
+    const god = document.createElement('div')
+    god.setAttribute('id','page')
+    const all = document.createElement('div')
+    all.setAttribute('id', 'god')
+    body.append(god)
+    god.append(all)
+    for (let key in data) {
+        const obj = data[key]
+        const single = document.createElement('div')
+        const name = document.createElement('p')
+        const of = document.createElement('p')
+        const info = document.createElement('p')
+        const fun = document.createElement('p')
+        const panth = document.createElement('p')
+        const dele = document.createElement('button')
+        dele.textContent = 'Delete'
+        name.setAttribute('id','name')
+        of.setAttribute('id','of')
+        info.setAttribute('id','info')
+        fun.setAttribute('id','fun')
+        panth.setAttribute('id','pantheon')
+        single.setAttribute('id', 'single')
+        name.innerHTML = obj.name
+        of.innerHTML = obj.god_goddess_of
+        info.innerHTML = obj.info
+        fun.innerHTML = obj.fun_facts
+        panth.innerHTML = obj.pantheon_name
+        dele.addEventListener('click', async () => {
+            await deleteGod(obj.name);
+        });
+        all.append(name)
+        all.append(of)
+        all.append(info)
+        all.append(fun)
+        all.append(panth)
+        all.append(dele)
+    }
 }
 
 function deleteGod (name) {
