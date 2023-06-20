@@ -71,11 +71,11 @@ searchBtn.addEventListener('click', async () => {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
-    const nam = document.querySelector('#name')
-    const godO = document.querySelector('#god-goddess-of')
-    const inf = document.querySelector('#info')
-    const funFacts = document.querySelector('#funFacts')
-    const pantheon = document.querySelector('#pantheon')
+    const nam = document.querySelector('#name').value
+    const godO = document.querySelector('#god-goddess-of').value
+    const inf = document.querySelector('#info').value
+    const funFacts = document.querySelector('#funFacts').value
+    const pantheon = document.querySelector('#pantheon').value
     const obj = {
         name: nam,
         god_goddess_of: godO,
