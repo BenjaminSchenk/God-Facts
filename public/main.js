@@ -241,7 +241,7 @@ function searchGods (data) {
     }
 }
 
-function editGod (name) {
+function editGod(name) {
     const page = document.querySelector('#page')
     page.remove()
     const god = document.createElement('div')
@@ -314,9 +314,6 @@ function editGod (name) {
             },
             body: JSON.stringify(updated)
         })
-        const response =  fetch(`https://ancient-gods.onrender.com/gods/${name}`)
-        const data =  response.json()
-        searchGods(data)
     })
 }
 
