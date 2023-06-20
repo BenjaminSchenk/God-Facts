@@ -12,7 +12,7 @@ home.addEventListener('click', () => {
     const page = document.querySelector('#page')
     page.remove()
     const home = document.createElement('div')
-    allGods.setAttribute('id','page')
+    home.setAttribute('id','page')
     body.append(home)
 })
 
