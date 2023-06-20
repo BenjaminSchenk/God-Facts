@@ -59,12 +59,12 @@ hindu.addEventListener('click', async () => {
     pantheon(data)
 })
 
-dele.addEventListener('click', async () => {
-    const response = fetch(`https://ancient-gods.onrender.com/gods/${name}`, {
-        method: 'DELETE'
-      })
+//dele.addEventListener('click', async () => {
+  //  const response = fetch(`https://ancient-gods.onrender.com/gods/${name}`, {
+    //    method: 'DELETE'
+  //    })
 
-})
+//})
 console.log('working')
 searchBtn.addEventListener('click', async () => {
     const input = document.querySelector('#searchInput')
