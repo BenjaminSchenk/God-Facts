@@ -52,10 +52,10 @@ function allgods (data) {
         info.innerHTML = obj.info
         fun.innerHTML = obj.fun_facts
         pantheon.innerHTML = obj.pantheon_name
-        page.append(name)
-        page.append(of)
-        page.append(info)
-        page.append(fun)
-        page.append(pantheon)
+        allGods.append(name)
+        allGods.append(of)
+        allGods.append(info)
+        allGods.append(fun)
+        allGods.append(pantheon)
     }
 }
