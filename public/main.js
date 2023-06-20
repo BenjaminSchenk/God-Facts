@@ -108,6 +108,8 @@ function allgods (data) {
         const fun = document.createElement('p')
         const panth = document.createElement('p')
         const dele = document.createElement('button')
+        const edit = document.createElement('button')
+        edit.textContent = 'Edit'
         dele.textContent = 'Delete'
         name.setAttribute('class','name')
         of.setAttribute('class','of')
@@ -122,11 +124,15 @@ function allgods (data) {
         dele.addEventListener('click', async () => {
             await deleteGod(obj.name);
         });
+        edit.addEventListener('click', async () => {
+            await editGod(obj.name)
+        });
         all.append(name)
         all.append(of)
         all.append(info)
         all.append(fun)
         all.append(panth)
+        all.append(edit)
         all.append(dele)
         allGods.append(all)
     }
@@ -222,6 +228,81 @@ function searchGods (data) {
         god.append(single)
     }
     }
+}
+
+function editGod(name) {
+    const page = document.querySelector('#page')
+    page.remove()
+    const god = document.createElement('div')
+    god.setAttribute('id','page')
+    body.append(god)
+    const eGod = document.createElement('div')
+    eGod.setAttribute('id', 'egod')
+    god.append(eGod)
+    eGod.append(name)
+    const upForm = document.createElement('form');
+    upForm.name = 'upform';
+    upForm.id = 'upform';
+    const godLabel = document.createElement('label');
+    godLabel.setAttribute('for', 'god-goddess-of');
+    godLabel.textContent = 'God or Goddess of:';
+    const godInput = document.createElement('input');
+    godInput.type = 'text';
+    godInput.id = 'god-goddess';
+    godInput.required = true;
+    const infoLabel = document.createElement('label');
+    infoLabel.setAttribute('for', 'INFO');
+    infoLabel.textContent = 'Info'
+    const infoInput = document.createElement('input');
+    infoInput.type = 'text';
+    infoInput.id = 'INFO'
+    infoInput.required = true;
+    const funFLabel = document.createElement('label');
+    funFLabel.setAttribute('for', 'funF');
+    funFLabel.textContent = 'Fun Facts';
+    const funFInput = document.createElement('input');
+    funFInput.type = 'text';
+    funFInput.id = 'funF';
+    funFInput.required = 'true';
+    const panLabel = document.createElement('label');
+    panLabel.setAttribute('for', 'pan');
+    panLabel.textContent = 'Pantheon';
+    const panInput = document.createElement('input');
+    panInput.type = 'text';
+    panInput.id = 'pan';
+    panInput.required = true;
+    const submitButton = document.createElement('input');
+    submitButton.type = 'submit';
+    submitButton.value = 'Submit';
+    upForm.append(godLabel);
+    upForm.append(godInput);
+    upForm.append(infoLabel);
+    upForm.append(infoInput);
+    upForm.append(funFLabel);
+    upForm.append(funFInput);
+    upForm.append(panLabel);
+    upForm.append(panInput);
+    upForm.append(submitButton);
+    upForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const gof = godInput.value
+        const fo = infoInput.value
+        const fact = funFInput.value
+        const theon = panInput.value
+        const updated = {
+            god_goddess_of: gof,
+            info: fo,
+            fun_facts: fact,
+            pantheon_name: theon  
+        } 
+    fetch(`https://ancient-gods.onrender.com/gods/${name}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updated)
+    })
+    })
 }
 
 function deleteGod (name) {
