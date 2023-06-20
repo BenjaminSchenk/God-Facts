@@ -240,6 +240,7 @@ function editGod(name) {
     eGod.setAttribute('id', 'egod')
     god.append(eGod)
     eGod.append(name)
+    eGod.append(upForm)
     const upForm = document.createElement('form');
     upForm.name = 'upform';
     upForm.id = 'upform';
