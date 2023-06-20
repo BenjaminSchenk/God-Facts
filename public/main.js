@@ -155,6 +155,9 @@ function pantheon (data) {
 }
 
 function searchGods (data) {
+    if (data.length === 0) {
+        alert('No gods found at this search maybe you misspelled or did not caplitize the name.')
+    }
     const page = document.querySelector('#page')
     page.remove()
     const god = document.createElement('div')
