@@ -95,6 +95,7 @@ function allgods (data) {
         panth.innerHTML = obj.pantheon_name
         dele.addEventListener('click', async () => {
             await deleteGod(obj.name);
+            allgods(data)
           });
         all.append(name)
         all.append(of)
