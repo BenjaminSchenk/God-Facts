@@ -138,7 +138,7 @@ function pantheon (data) {
 }
 
 function deleteGod (name) {
-    return fetch(`https://ancient-gods.onrender.com/gods/${name}`, {
+    return fetch(`https://ancient-gods.onrender.com/gods/:${name}`, {
     method: 'DELETE'
   })
 }
