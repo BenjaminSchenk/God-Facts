@@ -34,7 +34,10 @@ function allgods (data) {
     page.remove()
     const allGods = document.createElement('div')
     allGods.setAttribute('id','page')
+    const all = document.createElement('div')
+    all.setAttribute('id', 'all')
     body.append(allGods)
+    allGods.append(all)
     for (let i = 0; i < data.length; i++) {
         const obj = data[i]
         const name = document.createElement('p')
@@ -52,10 +55,10 @@ function allgods (data) {
         info.innerHTML = obj.info
         fun.innerHTML = obj.fun_facts
         pantheon.innerHTML = obj.pantheon_name
-        allGods.append(name)
-        allGods.append(of)
-        allGods.append(info)
-        allGods.append(fun)
-        allGods.append(pantheon)
+        all.append(name)
+        all.append(of)
+        all.append(info)
+        all.append(fun)
+        all.append(pantheon)
     }
 }
