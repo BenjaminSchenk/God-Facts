@@ -79,21 +79,62 @@ function allgods (data) {
         const of = document.createElement('p')
         const info = document.createElement('p')
         const fun = document.createElement('p')
-        const pantheon = document.createElement('p')
+        const panth = document.createElement('p')
         name.setAttribute('id','name')
         of.setAttribute('id','of')
         info.setAttribute('id','info')
         fun.setAttribute('id','fun')
-        pantheon.setAttribute('id','pantheon')
+        panth.setAttribute('id','pantheon')
         name.innerHTML = obj.name
         of.innerHTML = obj.god_goddess_of
         info.innerHTML = obj.info
         fun.innerHTML = obj.fun_facts
-        pantheon.innerHTML = obj.pantheon_name
+        panth.innerHTML = obj.pantheon_name
         all.append(name)
         all.append(of)
         all.append(info)
         all.append(fun)
-        all.append(pantheon)
+        all.append(panth)
     }
+}
+
+function pantheon (data) {
+    const page = document.querySelector('#page')
+    page.remove()
+    const gods = document.createElement('div')
+    gods.setAttribute('id','page')
+    const all = document.createElement('div')
+    all.setAttribute('id', 'all')
+    body.append(gods)
+    gods.append(all)
+    for (let key in data) {
+        let obj2 = data[key]
+        const descript = document.createElement('p')
+        descript.setAttribute('id', 'description')
+        descript.innerHTML = obj2.description
+        all.append(descript)
+    }
+    for (let i = 0; i < data.length; i++) {
+        const obj = data[i]
+        const name = document.createElement('p')
+        const of = document.createElement('p')
+        const info = document.createElement('p')
+        const fun = document.createElement('p')
+        const panth = document.createElement('p')
+        name.setAttribute('id','name')
+        of.setAttribute('id','of')
+        info.setAttribute('id','info')
+        fun.setAttribute('id','fun')
+        panth.setAttribute('id','pantheon')
+        name.innerHTML = obj.name
+        of.innerHTML = obj.god_goddess_of
+        info.innerHTML = obj.info
+        fun.innerHTML = obj.fun_facts
+        panth.innerHTML = obj.pantheon_name
+        all.append(name)
+        all.append(of)
+        all.append(info)
+        all.append(fun)
+        all.append(panth)
+    } 
 }
