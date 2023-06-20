@@ -101,13 +101,11 @@ function pantheon (data) {
     all.setAttribute('id', 'all')
     body.append(gods)
     gods.append(all)
-    for (let key in data) {
-        let obj2 = data[key]
-        const descript = document.createElement('p')
-        descript.setAttribute('id', 'description')
-        descript.innerHTML = obj2.description
-        all.append(descript)
-    }
+    let obj2 = data[0]
+    const descript = document.createElement('p')
+    descript.setAttribute('id', 'description')
+    descript.innerHTML = obj2.description
+    all.append(descript)
     for (let i = 0; i < data.length; i++) {
         const obj = data[i]
         const name = document.createElement('p')
