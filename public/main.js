@@ -71,6 +71,7 @@ searchBtn.addEventListener('click', async () => {
     const value = input.value.trim()
     const response = await fetch(`https://ancient-gods.onrender.com/gods/${value}`)
     const data = await response.json()
+    console.log(data)
     searchGods(data)
 });
 
