@@ -110,7 +110,7 @@ function allgods (data) {
         all.append(fun)
         all.append(panth)
         all.append(dele)
-        gods.append(all)
+        allGodsods.append(all)
     }
 }
 
