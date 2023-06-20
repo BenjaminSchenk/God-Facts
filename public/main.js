@@ -165,7 +165,7 @@ function searchGods (data) {
         p.setAttribute('id', 'nothing')
         p.textContent = 'No gods found at this search maybe you misspelled or did not caplitize the name.'
         god.append(p)
-    }
+    } else {
     for (let i = 0; i < data.length; i++) {
         const obj = data[i]
         const single = document.createElement('div')
@@ -197,6 +197,7 @@ function searchGods (data) {
         single.append(panth)
         single.append(dele)
         god.append(single)
+    }
     }
 }
 
