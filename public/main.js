@@ -8,6 +8,7 @@ const aztec = document.querySelector('#Aztec')
 const hawaiian = document.querySelector('#Hawaiian')
 const hindu = document.querySelector('#Hindu')
 const searchBtn = document.querySelector('#searchBtn')
+const form = document.querySelector('#form1')
 
 home.addEventListener('click', () => {
     const page = document.querySelector('#page')
@@ -59,7 +60,6 @@ hindu.addEventListener('click', async () => {
     pantheon(data)
 })
 
-console.log('working')
 searchBtn.addEventListener('click', async () => {
     const input = document.querySelector('#searchInput')
     const value = input.value
@@ -68,6 +68,26 @@ searchBtn.addEventListener('click', async () => {
     console.log(data)
     searchGods(data)
 });
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const nam = document.querySelector('#name')
+    const godO = document.querySelector('#god-goddess-of')
+    const inf = document.querySelector('#info')
+    const funFacts = document.querySelector('#funFacts')
+    const pantheon = document.querySelector('#pantheon')
+    const obj = {
+        name: nam,
+        god_goddess_of: godO,
+        info: inf,
+        fun_facts: funFacts,
+        pantheon_name: pantheon
+    }
+    fetch('https://ancient-gods.onrender.com/gods', {
+        method: 'POST',
+        body: JSON.stringify(obj)
+    })
+})
 
 function allgods (data) {
     const page = document.querySelector('#page')
