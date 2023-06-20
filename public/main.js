@@ -65,7 +65,7 @@ dele.addEventListener('click', async () => {
       })
 
 })
-
+console.log('working')
 searchBtn.addEventListener('click', async () => {
     const input = document.querySelector('#searchInput')
     const value = input.value
