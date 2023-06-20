@@ -29,6 +29,41 @@ greek.addEventListener('click', async () => {
     //pantheon(data)
 })
 
+egyptian.addEventListener('click', async () => {
+    const response = await fetch('https://ancient-gods.onrender.com/pantheon/Egyptian Pantheon')
+    const data = await response.json()
+    console.log(data)
+    //pantheon(data)
+})
+
+norse.addEventListener('click', async () => {
+    const response = await fetch('https://ancient-gods.onrender.com/pantheon/Norse Pantheon')
+    const data = await response.json()
+    console.log(data)
+    //pantheon(data)
+})
+
+aztec.addEventListener('click', async () => {
+    const response = await fetch('https://ancient-gods.onrender.com/pantheon/Aztec Pantheon')
+    const data = await response.json()
+    console.log(data)
+    //pantheon(data)
+})
+
+hawaiian.addEventListener('click', async () => {
+    const response = await fetch('https://ancient-gods.onrender.com/pantheon/Hawaiian Pantheon')
+    const data = await response.json()
+    console.log(data)
+    //pantheon(data)
+})
+
+hindu.addEventListener('click', async () => {
+    const response = await fetch('https://ancient-gods.onrender.com/pantheon/Hindu Pantheon')
+    const data = await response.json()
+    console.log(data)
+    //pantheon(data)
+})
+
 function allgods (data) {
     const page = document.querySelector('#page')
     page.remove()
