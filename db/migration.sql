@@ -8,7 +8,8 @@ CREATE TABLE pantheon (
 DROP TABLE IF EXISTS gods;
 
 CREATE TABLE gods (
-    name varchar(20) PRIMARY KEY,
+    id serial PRIMARY KEY,
+    name varchar(20),
     god_goddess_of text,
     info text,
     fun_facts text,
