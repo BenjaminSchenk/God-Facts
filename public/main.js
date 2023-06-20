@@ -159,6 +159,8 @@ function pantheon (data) {
         const fun = document.createElement('p')
         const panth = document.createElement('p')
         const dele = document.createElement('button')
+        const edit = document.createElement('button')
+        edit.textContent = 'Edit'
         dele.textContent = 'Delete'
         name.setAttribute('class','name')
         of.setAttribute('class','of')
@@ -173,11 +175,15 @@ function pantheon (data) {
         dele.addEventListener('click', async () => {
             await deleteGod(obj.name);
         });
+        edit.addEventListener('click', async () => {
+            await editGod(obj.name)
+        });
         all.append(name)
         all.append(of)
         all.append(info)
         all.append(fun)
         all.append(panth)
+        all.append(edit)
         all.append(dele)
         gods.append(all)
     } 
@@ -204,6 +210,8 @@ function searchGods (data) {
         const fun = document.createElement('p')
         const panth = document.createElement('p')
         const dele = document.createElement('button')
+        const edit = document.createElement('button')
+        edit.textContent = 'Edit'
         dele.textContent = 'Delete'
         name.setAttribute('id','name')
         of.setAttribute('id','of')
@@ -219,11 +227,15 @@ function searchGods (data) {
         dele.addEventListener('click', async () => {
             await deleteGod(obj.name);
         });
+        edit.addEventListener('click', async () => {
+            await editGod(obj.name)
+        });
         single.append(name)
         single.append(of)
         single.append(info)
         single.append(fun)
         single.append(panth)
+        single.append(edit)
         single.append(dele)
         god.append(single)
     }
