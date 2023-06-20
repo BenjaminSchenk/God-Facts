@@ -11,9 +11,9 @@ const hindu = document.querySelector('#Hindu')
 home.addEventListener('click', () => {
     const page = document.querySelector('#page')
     page.remove()
-    const allGods = document.createElement('div')
+    const home = document.createElement('div')
     allGods.setAttribute('id','page')
-    body.append(page)
+    body.append(home)
 })
 
 allBtn.addEventListener('click', async () => {
