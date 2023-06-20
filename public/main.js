@@ -240,7 +240,6 @@ function editGod(name) {
     eGod.setAttribute('id', 'egod')
     god.append(eGod)
     eGod.append(name)
-    eGod.append(upForm)
     const upForm = document.createElement('form');
     upForm.name = 'upform';
     upForm.id = 'upform';
@@ -304,6 +303,7 @@ function editGod(name) {
         body: JSON.stringify(updated)
     })
     })
+    eGod.append(upForm)
 }
 
 function deleteGod (name) {
