@@ -283,6 +283,7 @@ function editGod(name) {
     upForm.append(panLabel);
     upForm.append(panInput);
     upForm.append(submitButton);
+    eGod.append(upForm);
     upForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const gof = godInput.value
@@ -295,15 +296,14 @@ function editGod(name) {
             fun_facts: fact,
             pantheon_name: theon  
         } 
-    fetch(`https://ancient-gods.onrender.com/gods/${name}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(updated)
+        fetch(`https://ancient-gods.onrender.com/gods/${name}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updated)
+        })
     })
-    })
-    eGod.append(upForm)
 }
 
 function deleteGod (name) {
