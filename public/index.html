@@ -18,27 +18,21 @@
         <button id="Hindu">Hindu</button>
         <input type="text" id="searchInput">
         <button id="searchBtn">Search</button>
-        <select id="createDropdown">
-            <option value="">Select a way to create new gods</option>
-            <option value="form">Create using a form</option>
-          </select>
-          <div id="createForm" style="display: none;">
-            <form id="newGodForm">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required>
-          
-              <label for="info">General Info:</label>
-              <textarea id="info" name="info" required></textarea>
-          
-              <label for="funFacts">Fun Facts:</label>
-              <textarea id="funFacts" name="funFacts" required></textarea>
-          
-              <label for="pantheon">Pantheon:</label>
-              <input type="text" id="pantheon" name="pantheon" required>
-          
-              <button type="submit">Create</button>
-            </form>
-          </div>
+        <form name="form1" id="form1" action="/action_page.php">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="info">General Info:</label>
+            <textarea id="info" name="info" required></textarea>
+            <br><br>
+            <label for="funFacts">Fun Facts:</label>
+            <textarea id="funFacts" name="funFacts" required></textarea>
+            <br><br>
+            <label for="pantheon">Pantheon:</label>
+            <input type="text" id="pantheon" name="pantheon" required>
+            <br><br>
+            <input type="submit" value="Submit">
+          </form>
     </div>
     <div id="page">
         <P>Home page</P>
