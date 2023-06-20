@@ -89,7 +89,7 @@ form.addEventListener('submit', (event) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(obj)
-    })
+    }); form.reset()
 })
 
 function allgods (data) {
