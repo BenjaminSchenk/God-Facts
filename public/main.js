@@ -77,7 +77,7 @@ function allgods (data) {
     body.append(allGods)
     for (let i = 0; i < data.length; i++) {
         const all = document.createElement('div')
-        all.setAttribute('id', 'all')
+        all.setAttribute('class', 'all')
         const obj = data[i]
         const name = document.createElement('p')
         const of = document.createElement('p')
@@ -86,11 +86,11 @@ function allgods (data) {
         const panth = document.createElement('p')
         const dele = document.createElement('button')
         dele.textContent = 'Delete'
-        name.setAttribute('id','name')
-        of.setAttribute('id','of')
-        info.setAttribute('id','info')
-        fun.setAttribute('id','fun')
-        panth.setAttribute('id','pantheon')
+        name.setAttribute('class','name')
+        of.setAttribute('class','of')
+        info.setAttribute('class','info')
+        fun.setAttribute('class','fun')
+        panth.setAttribute('class','pantheon')
         name.innerHTML = obj.name
         of.innerHTML = obj.god_goddess_of
         info.innerHTML = obj.info
@@ -122,7 +122,7 @@ function pantheon (data) {
     gods.append(descript)
     for (let i = 0; i < data.length; i++) {
         const all = document.createElement('div')
-        all.setAttribute('id', 'all')
+        all.setAttribute('class', 'all')
         const obj = data[i]
         const name = document.createElement('p')
         const of = document.createElement('p')
@@ -131,11 +131,11 @@ function pantheon (data) {
         const panth = document.createElement('p')
         const dele = document.createElement('button')
         dele.textContent = 'Delete'
-        name.setAttribute('id','name')
-        of.setAttribute('id','of')
-        info.setAttribute('id','info')
-        fun.setAttribute('id','fun')
-        panth.setAttribute('id','pantheon')
+        name.setAttribute('class','name')
+        of.setAttribute('class','of')
+        info.setAttribute('class','info')
+        fun.setAttribute('class','fun')
+        panth.setAttribute('class','pantheon')
         name.innerHTML = obj.name
         of.innerHTML = obj.god_goddess_of
         info.innerHTML = obj.info
