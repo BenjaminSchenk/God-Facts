@@ -155,14 +155,17 @@ function pantheon (data) {
 }
 
 function searchGods (data) {
-    if (data.length === 0) {
-        alert('No gods found at this search maybe you misspelled or did not caplitize the name.')
-    }
     const page = document.querySelector('#page')
     page.remove()
     const god = document.createElement('div')
     god.setAttribute('id','page')
     body.append(god)
+    if (data.length === 0) {
+        const p = document.createElement('p')
+        p.setAttribute('id', 'nothing')
+        p.textContent = 'No gods found at this search maybe you misspelled or did not caplitize the name.'
+        god.append(p)
+    }
     for (let i = 0; i < data.length; i++) {
         const obj = data[i]
         const single = document.createElement('div')
