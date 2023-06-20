@@ -25,43 +25,37 @@ allBtn.addEventListener('click', async () => {
 greek.addEventListener('click', async () => {
     const response = await fetch('https://ancient-gods.onrender.com/pantheon/Greek Pantheon')
     const data = await response.json()
-    console.log(data)
-    //pantheon(data)
+    pantheon(data)
 })
 
 egyptian.addEventListener('click', async () => {
     const response = await fetch('https://ancient-gods.onrender.com/pantheon/Egyptian Pantheon')
     const data = await response.json()
-    console.log(data)
-    //pantheon(data)
+    pantheon(data)
 })
 
 norse.addEventListener('click', async () => {
     const response = await fetch('https://ancient-gods.onrender.com/pantheon/Norse Pantheon')
     const data = await response.json()
-    console.log(data)
-    //pantheon(data)
+    pantheon(data)
 })
 
 aztec.addEventListener('click', async () => {
     const response = await fetch('https://ancient-gods.onrender.com/pantheon/Aztec Pantheon')
     const data = await response.json()
-    console.log(data)
-    //pantheon(data)
+    pantheon(data)
 })
 
 hawaiian.addEventListener('click', async () => {
     const response = await fetch('https://ancient-gods.onrender.com/pantheon/Hawaiian Pantheon')
     const data = await response.json()
-    console.log(data)
-    //pantheon(data)
+    pantheon(data)
 })
 
 hindu.addEventListener('click', async () => {
     const response = await fetch('https://ancient-gods.onrender.com/pantheon/Hindu Pantheon')
     const data = await response.json()
-    console.log(data)
-    //pantheon(data)
+    pantheon(data)
 })
 
 function allgods (data) {
