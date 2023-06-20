@@ -68,7 +68,7 @@ dele.addEventListener('click', async () => {
 
 searchBtn.addEventListener('click', async () => {
     const input = document.querySelector('#searchInput')
-    const value = input.value.trim()
+    const value = input.value
     const response = await fetch(`https://ancient-gods.onrender.com/gods/${value}`)
     const data = await response.json()
     console.log(data)
