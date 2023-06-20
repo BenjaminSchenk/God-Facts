@@ -1,0 +1,82 @@
+body {
+    background: lightslategray;
+}
+
+
+#buttons {
+    padding-left: 90%;
+    background: rgb(68, 68, 68);
+}
+
+#Home {
+    font-size: 1rem;
+    background: darkgray;
+    color: rgb(39, 39, 39);
+}
+
+#Gods {
+    font-size: 1rem;
+    background: darkgray;
+    color: rgb(39, 39, 39);
+}
+
+#godList {
+    background: gray;
+    padding: 0rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#panHeader {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20%;
+}
+
+#Greek {
+    background: rgb(39, 39, 39);
+    color: darkgray; 
+    margin-right: 2px;
+    margin-left: 100px;
+}
+
+#Egyptian {
+    background: rgb(39, 39, 39);
+    color: darkgray; 
+    margin-right: 2px;
+}
+
+#Norse {
+    background: rgb(39, 39, 39);
+    color: darkgray; 
+    margin-right: 2px;
+}
+
+#Aztec {
+    background: rgb(39, 39, 39);
+    color: darkgray; 
+    margin-right: 2px;
+}
+
+#Hawaiian {
+    background: rgb(39, 39, 39);
+    color: darkgray; 
+    margin-right: 2px;
+}
+
+#Hindu {
+    background: rgb(39, 39, 39);
+    color: darkgray; 
+    margin-right: 200px;
+}
+
+#searchBtn {
+    background: rgb(39, 39, 39);
+    color: darkgray; 
+}
+
+#create {
+    background: lightgray;
+    display: flex;
+}
