@@ -12,7 +12,7 @@
         <button id="Gods">All Gods</button>
     </div>
     <div id="godList">
-        <h2 id="panHeader">Pantheons of Ancient Gods</h2>
+        <h2 id="panHeader">Pantheons of Ancient Gods:</h2>
         <button id="Greek">Greek</button>
         <button id="Egyptian">Egyptian</button>
         <button id="Norse">Norse</button>
@@ -20,27 +20,26 @@
         <button id="Hawaiian">Hawaiian</button>
         <button id="Hindu">Hindu</button>
         <br><br>
-        <input type="text" id="searchInput">
+        <input id="s" type="text" id="searchInput">
         <button id="searchBtn">Search</button>
     </div>
     <div id="create">
         <form name="form1" id="form1" action="https://ancient-gods.onrender.com/gods" method="post">
-            <label for="name">Name:</label>
+            <label id="n" for="name">Name:</label>
             <input type="text" id="name" name="name" value="" required>
-            <label for="god-goddess-of">God or Goddess of:</label>
+            <label id="g" for="god-goddess-of">God or Goddess of:</label>
             <input type="text" id="god-goddess-of" name="god_goddess_of" value="" required>
-            <label for="info">Info:</label>
-            <textarea id="info" name="info" value="" required></textarea>
-            <label for="funFacts">Fun Facts:</label>
-            <textarea id="funFacts" name="fun_facts" value="" required></textarea>
-            <label for="pantheon">Pantheon:</label>
+            <label id="i" for="info">Info:</label>
+            <input id="info" name="info" value="" required>
+            <label id="f" for="funFacts">Fun Facts:</label>
+            <input id="funFacts" name="fun_facts" value="" required>
+            <label id="p" for="pantheon">Pantheon:</label>
             <input type="text" id="pantheon" name="pantheon_name" value="" required>
-            <br><br>
-            <input type="submit" value="Submit">
+            <input id="sub" type="submit" value="Submit">
         </form>
     </div>
     <div id="page">
-        <h1>Ancients Gods</h1>
+        <h1 id="topic">Ancients Gods</h1>
     </div>
 
     <script src="main.js"></script>

@@ -1,5 +1,5 @@
 body {
-    background: lightslategray;
+    background: lightgray;
 }
 
 
@@ -37,38 +37,42 @@ body {
 #Greek {
     background: rgb(39, 39, 39);
     color: darkgray; 
-    margin-right: 2px;
-    margin-left: 100px;
+    margin-right: .5rem;
+    margin-left: 5rem;
 }
 
 #Egyptian {
     background: rgb(39, 39, 39);
     color: darkgray; 
-    margin-right: 2px;
+    margin-right: .5rem;
 }
 
 #Norse {
     background: rgb(39, 39, 39);
     color: darkgray; 
-    margin-right: 2px;
+    margin-right: .5rem;
 }
 
 #Aztec {
     background: rgb(39, 39, 39);
     color: darkgray; 
-    margin-right: 2px;
+    margin-right: .5rem;
 }
 
 #Hawaiian {
     background: rgb(39, 39, 39);
     color: darkgray; 
-    margin-right: 2px;
+    margin-right: .5rem;
 }
 
 #Hindu {
     background: rgb(39, 39, 39);
     color: darkgray; 
-    margin-right: 200px;
+    margin-right: 7rem;
+}
+
+#s {
+    background: wheat;
 }
 
 #searchBtn {
@@ -77,6 +81,56 @@ body {
 }
 
 #create {
-    background: lightgray;
+    background: rgb(68, 68, 68);
     display: flex;
+}
+
+#n {
+    color: whitesmoke;
+}
+
+#name {
+    background: wheat;
+    margin-right: .5rem;
+}
+
+#g {
+    color: whitesmoke;
+}
+
+#god-goddess-of {
+    background: wheat;
+    margin-right: .5rem;
+}
+
+#i {
+    color: whitesmoke;
+}
+
+#info {
+    background: wheat;
+    margin-right: .5rem;
+}
+
+#f {
+    color: whitesmoke;
+}
+
+#funFacts {
+    background: wheat;
+    margin-right: .5rem;
+}
+
+#p {
+    color: whitesmoke;
+}
+
+#pantheon {
+    background: wheat;
+    margin-right: .5rem;
+}
+
+#sub {
+    background: darkgray;
+    color: rgb(39, 39, 39);
 }

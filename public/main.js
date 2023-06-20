@@ -16,6 +16,10 @@ home.addEventListener('click', () => {
     const home = document.createElement('div')
     home.setAttribute('id','page')
     body.append(home)
+    const header = document.createElement('h1')
+    header.setAttribute('id', 'topic')
+    header.textContent = 'Ancients Gods'
+    home.append(header)
 })
 
 allBtn.addEventListener('click', async () => {
@@ -212,12 +216,12 @@ function searchGods (data) {
         const edit = document.createElement('button')
         edit.textContent = 'Edit'
         dele.textContent = 'Delete'
-        name.setAttribute('id','name')
-        of.setAttribute('id','of')
-        info.setAttribute('id','info')
-        fun.setAttribute('id','fun')
-        panth.setAttribute('id','pantheon')
-        single.setAttribute('id', 'single')
+        name.setAttribute('id','nam')
+        of.setAttribute('id','o')
+        info.setAttribute('id','inf')
+        fun.setAttribute('id','fu')
+        panth.setAttribute('id','pantheo')
+        single.setAttribute('id', 'singl')
         name.innerHTML = obj.name
         of.innerHTML = obj.god_goddess_of
         info.innerHTML = obj.info
