@@ -164,12 +164,9 @@ function searchGods (data) {
     page.remove()
     const god = document.createElement('div')
     god.setAttribute('id','page')
-    const all = document.createElement('div')
-    all.setAttribute('id', 'god')
     body.append(god)
-    god.append(all)
-    for (let key in data) {
-        const obj = data[key]
+    for (let i = 0; i < data.length; i++) {
+        const obj = data[i]
         const single = document.createElement('div')
         const name = document.createElement('p')
         const of = document.createElement('p')
@@ -192,12 +189,13 @@ function searchGods (data) {
         dele.addEventListener('click', async () => {
             await deleteGod(obj.name);
         });
-        all.append(name)
-        all.append(of)
-        all.append(info)
-        all.append(fun)
-        all.append(panth)
-        all.append(dele)
+        single.append(name)
+        single.append(of)
+        single.append(info)
+        single.append(fun)
+        single.append(panth)
+        single.append(dele)
+        god.append(single)
     }
 }
 
