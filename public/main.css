@@ -161,13 +161,24 @@ button:hover {
     display: inline-block;
     width: 50%;
     height: 50%;
-    margin: 10px;
+    margin-left: 25%;
     background: gray;
-    display: flex;
-    margin: auto;
 }
 
 .all p {
+    margin: 0;
+    text-align: center;
+}
+
+#single {
+    display: inline-block;
+    width: 80%;
+    height: 80%;
+    margin: 10px;
+    background: gray;
+}
+
+#single p {
     margin: 0;
     text-align: center;
 }
