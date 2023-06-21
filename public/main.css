@@ -163,7 +163,7 @@ button:hover {
     height: 50%;
     margin: 10px;
     background: gray;
-    align-items: center;
+    margin: auto;
 }
 
 .all p {
