@@ -162,6 +162,7 @@ button:hover {
     width: 50%;
     height: 50%;
     margin: 10px;
+    display: flex;
     background: gray;
 }
 
