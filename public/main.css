@@ -162,4 +162,10 @@ button:hover {
     width: 200px;
     height: 200px;
     margin: 10px;
+    background: gray;
+}
+
+.all p {
+    margin: 0;
+    text-align: center;
 }
