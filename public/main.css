@@ -174,7 +174,7 @@ button:hover {
     display: inline-block;
     width: 80%;
     height: 80%;
-    margin: 10px;
+    margin-left: 25%;
     background: gray;
 }
 
@@ -188,4 +188,7 @@ button:hover {
     text-align: center;
     background: rgb(95, 91, 91);
     color: whitesmoke;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
 }
