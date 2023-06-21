@@ -75,7 +75,7 @@ hindu.addEventListener('click', async () => {
 searchBtn.addEventListener('click', async () => {
     const input = document.querySelector('#searchInput')
     const value = input.value
-    const response = await fetch(`https://ancient-gods.onrender.com/gods/${value}`)
+    const response = await fetch(`https://ancient-gods.onrender.com/gods?name=${value}`)
     const data = await response.json()
     searchGods(data)
 });
