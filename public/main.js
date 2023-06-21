@@ -77,7 +77,6 @@ searchBtn.addEventListener('click', async () => {
     const value = input.value
     const response = await fetch(`https://ancient-gods.onrender.com/gods/${value}`)
     const data = await response.json()
-    console.log(data)
     searchGods(data)
 });
 
@@ -230,7 +229,7 @@ function searchGods (data) {
         info.setAttribute('id','inf')
         fun.setAttribute('id','fu')
         panth.setAttribute('id','pantheo')
-        single.setAttribute('id', 'singl')
+        single.setAttribute('id', 'single')
         name.innerHTML = obj.name
         of.innerHTML = obj.god_goddess_of
         info.innerHTML = obj.info
