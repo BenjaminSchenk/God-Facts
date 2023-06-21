@@ -239,7 +239,7 @@ function searchGods (data) {
             await deleteGod(obj.name);
         });
         edit.addEventListener('click', async () => {
-            await editGod(obj.name)
+             editGod(obj.name)
         });
         single.append(name)
         single.append(of)
