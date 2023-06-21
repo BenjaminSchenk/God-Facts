@@ -18,8 +18,16 @@ home.addEventListener('click', () => {
     body.append(home)
     const header = document.createElement('h1')
     header.setAttribute('id', 'topic')
-    header.textContent = 'Ancients Gods'
+    header.textContent = 'Ancient Gods'
+    const p1 = document.createElement('p')
+    const p2 = document.createElement('p')
+    p1.setAttribute('id', 'p1')
+    p2.setAttribute('id', 'p2')
+    p1.textContent = 'What would you like to know?'
+    p2.textContent = 'What would you like to share?'
     home.append(header)
+    home.append(p1)
+    home.append(p2)
 })
 
 allBtn.addEventListener('click', async () => {

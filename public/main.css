@@ -2,6 +2,10 @@ body {
     background: lightgray;
 }
 
+button:hover {
+    background-color: lightblue;
+    cursor: pointer;
+}
 
 #buttons {
     padding-left: 90%;
@@ -133,4 +137,29 @@ body {
 #sub {
     background: darkgray;
     color: rgb(39, 39, 39);
+}
+
+#topic {
+    font-size: 50px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#p1 {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+#p2 {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center; 
+}
+
+.all {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
 }
