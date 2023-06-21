@@ -157,12 +157,16 @@ button:hover {
     text-align: center; 
 }
 
+#page {
+    align-items: center;
+}
+
 .all {
     display: inline-block;
     width: 50%;
     height: 50%;
     margin: 10px;
-    display: flex;
+ 
     background: gray;
 }
 
