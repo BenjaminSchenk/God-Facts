@@ -192,3 +192,7 @@ button:hover {
     height: 50%;
     margin-left: 25%;
 }
+
+#nam {
+    font-size: 5rem;
+}
