@@ -159,8 +159,8 @@ button:hover {
 
 .all {
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: auto;
+    height: auto;
     margin: 10px;
     background: gray;
 }
